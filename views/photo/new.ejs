@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Upload a Photo</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/photos">Photos Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form action="/photos" method="post">
+        <select name="userId">
+          <% for( let i=0; i < users.length; i++){%>
+            <option value="<%=users[i].id%>"><%=users[i].name%></option>
+          <% }%>
+        </select><br/>
+
+        <input type="text" name="title" /><br/>
+        <img src="body"/><br/>
+        <input type="submit" value="Add Photo"/>
+      </form>
+    </main>
+  </body>
+</html>
